@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>"Solo imagina lo precioso que puede ser arriesgarse y que todo salga bien."</title>
+    <style>
+        /* --- ESTILOS GENERALES Y PANTALLA 1 --- */
+        :root {
+            --pink-bg: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            --primary-pink: #e91e63;
+            --soft-pink: #fce4ec;
+        }
+        
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: var(--pink-bg); 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        #p1-screen {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            position: relative;
+        }
+
+        .card-p1 {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 85%;
+        }
+
+        .card-p1 h1 { color: var(--primary-pink); margin-bottom: 30px; }
+
+        .btns-container { display: flex; justify-content: center; align-items: center; gap: 20px; min-height: 120px; }
+        
+        button { 
+            padding: 15px 30px; 
+            font-size: 1.2rem; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-weight: bold;
+            transition: transform 0.1s ease;
+        }
+        
+        #btn-si { background-color: #ff4d6d; color: white; box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4); }
+        #btn-no { background-color: #adb5bd; color: white; position: relative; transition: 0.1s; }
+
+        /* --- ESTILOS PANTALLA 2 (TU SEGUNDO PROYECTO) --- */
+        #p2-screen {
+            display: none;
+            width: 100%;
+            background-image: url('fondo_romantico.jpg'); /* */
+            background-size: cover;
+            background-attachment: fixed;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .container-p2 {
+            background-color: rgba(255, 255, 255, 0.85); /* */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            text-align: center;
+            width: 90%;
+            max-width: 960px;
+        }
+
+        .container-p2 h1 { font-size: 3em; color: var(--primary-pink); text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .nombre { font-size: 1.2em; font-style: italic; color: #777; margin: 10px 0; }
+        .marquesina { background-color: var(--soft-pink); padding: 15px; margin: 20px 0; border-radius: 8px; color: var(--primary-pink); font-weight: bold; }
+        
+        /* COLLAGE */
+        .collage-container { position: relative; width: 100%; min-height: 600px; margin: 30px 0; overflow: hidden; }
+        .collage-image {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            max-width: 450px; max-height: 550px; border: 4px solid white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); transition: all 0.4s ease; cursor: pointer;
+        }
+
+        .moving-right { transform: translateX(300px) rotate(25deg) scale(0.8); opacity: 0; }
+        .moving-left { transform: translateX(-300px) rotate(-25deg) scale(0.8); opacity: 0; }
+
+        /* TABLA Y VIDEOS */
+        table { width: 100%; max-width: 500px; margin: 20px auto; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; }
+        th, td { border: 1px solid #f8bbd0; padding: 12px; text-align: left; }
+        th { background-color: #f48fb1; color: white; }
+
+        .video-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+        video { width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .heart { position: absolute; color: rgba(255, 77, 109, 0.4); pointer-events: none; animation: floatUp 4s linear infinite; }
+        @keyframes floatUp { 0% { transform: translateY(110vh); opacity: 1; } 100% { transform: translateY(-10vh); opacity: 0; } }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <div id="p1-screen">
+        <div class="card-p1">
+            <h1>¿Lo intentamos otra vez? ❤️<br>¿Quieres?, ¿Quieres ver de lo que soy capaz de hacer por ti?<br> (obviamente con sinceridad, amabilidad y respeto),<br> descubrir el "¿Que hubiera pasado sí...?" y el "¿Qué pasaría?"</h1>
+            <div class="btns-container">
+                <button id="btn-si">Sí🥺</button>
+                <button id="btn-no">🫸🏻No👎🏻</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="p2-screen">
+        <div class="container-p2">
+            <h1>MI REINA 👑👸💖</h1>
+            <p class="nombre">"Solo imagina lo precioso que puede ser arriesgarse y que todo salga bien."</p>
+            <p>-Mario Benedetti.</p>
+            
+            <p class="nombre">
+                Yo me arriesgué y tuve al mejor ser; arriesgué y gané...<br><br>
+                Y así como talvez tu no te rendiste en decir "No", yo no lo he hecho, ni lo haré
+            </p>
+            
+            <audio src="Ezequiel De Luca.mp3" controls></audio>
+            <p style="font-size: 0.9em;">Diosa - Ezequiel de Luca</p>
+            
+            <hr style="border: 1px solid #f06292; width: 70%; margin: 20px auto;">
+
+            <div class="collage-container" id="collage">
+                <img src="S.c.jpg" class="collage-image"> <img src="S.h.jpg" class="collage-image">
+                <img src="S.B.jpg" class="collage-image"> <img src="S.A.jpg" class="collage-image">
+                <img src="S.SB.jpg" class="collage-image"> <img src="S.SR.jpg" class="collage-image">
+                <img src="S.EB.jpg" class="collage-image"> <img src="S.EPR.jpg" class="collage-image">
+                <img src="S.I.jpg" class="collage-image"> <img src="S.CN.jpg" class="collage-image">
+                <img src="S.osito.jpg" class="collage-image"> <img src="S.CT.jpg" class="collage-image">
+                <img src="S.AySR.jpg" class="collage-image"> <img src="S.Chapultepec.jpg" class="collage-image">
+                <img src="S.PCT.jpg" class="collage-image"> <img src="S.Anillo.jpg" class="collage-image">
+                <img src="S.ESN.jpg" class="collage-image"> <img src="S.T.jpg" class="collage-image">
+                <img src="S2.jpg" class="collage-image"> <img src="S3.jpg" class="collage-image">
+                <img src="S4.jpg" class="collage-image"> <img src="S5.jpg" class="collage-image">
+                <img src="S.Ojo.jpg" class="collage-image"> <img src="S.TKD1.jpg" class="collage-image">
+                <img src="S.TKD2.jpg" class="collage-image"> <img src="S.OR.jpg" class="collage-image">
+                <img src="S.ON.jpg" class="collage-image"> <img src="S.EN.jpg" class="collage-image">
+                <img src="S&E.jpg" class="collage-image"> <img src="S.U.jpg" class="collage-image">
+            </div>
+
+            <div class="marquesina">💖 Canciones que te dedico... ✨</div>
+
+            <table>
+                <thead><tr><th>Canción</th><th>Artista</th></tr></thead>
+                <tbody>
+                    <tr><td>Sirius</td><td>CERG</td></tr>
+                    <tr><td>Diosa</td><td>Ezequiel de Luca</td></tr>
+                </tbody>
+            </table>
+
+            <div class="marquesina"></div>
+
+            <div class="video-container">
+                <video controls><source src="Sirius.mp4" type="video/mp4"></video>
+                <video controls><source src="3.mp4" type="video/mp4"></video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const FORMSPREE_ID = "xeerroql"; 
+        let noAttempts = 0;
+        const startTime = Date.now();
+        
+        const btnNo = document.getElementById('btn-no');
+        const btnSi = document.getElementById('btn-si');
+        const p1 = document.getElementById('p1-screen');
+        const p2 = document.getElementById('p2-screen');
+
+        // BOTÓN NO SE MUEVE
+        function fuyeBoton() {
+            noAttempts++;
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight);
+            btnNo.style.position = 'fixed';
+            btnNo.style.left = x + 'px';
+            btnNo.style.top = y + 'px';
+            
+            let siSize = parseFloat(window.getComputedStyle(btnSi).fontSize);
+            btnSi.style.fontSize = (siSize + 2) + 'px';
+        }
+
+        btnNo.addEventListener('mouseover', fuyeBoton);
+        btnNo.addEventListener('touchstart', (e) => { e.preventDefault(); fuyeBoton(); });
+
+        // BOTÓN SÍ ACTIVA TODO
+        btnSi.onclick = () => {
+            const tiempo = Math.floor((Date.now() - startTime) / 1000);
+            
+            fetch(`https://formspree.io/f/xeerroql`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ Evento: "Dijo que SÍ ❤️", Intentos: noAttempts, Segundos: tiempo })
+            });
+
+            p1.classList.add('hidden');
+            p2.style.display = 'flex';
+            document.body.style.overflowY = 'auto';
+            iniciarCollage();
+        };
+
+        // LÓGICA COLLAGE
+        function iniciarCollage() {
+            const images = document.querySelectorAll('.collage-image');
+            let topIndex = images.length;
+            images.forEach((img, i) => {
+                img.style.zIndex = i + 1;
+                img.style.transform = `translate(-50%, -50%) rotate(${(Math.random()*10)-5}deg)`;
+                img.onclick = () => {
+                    if (parseInt(img.style.zIndex) < topIndex) return;
+                    const dir = Math.random() > 0.5 ? 'right' : 'left';
+                    img.classList.add(`moving-${dir}`);
+                    setTimeout(() => {
+                        img.classList.remove(`moving-${dir}`);
+                        img.style.zIndex = 1;
+                        images.forEach(o => { if(o !== img) o.style.zIndex = parseInt(o.style.zIndex)+1; });
+                    }, 400);
+                };
+            });
+        }
+
+        // Corazones
+        setInterval(() => {
+            if(p2.style.display !== 'flex') {
+                const h = document.createElement('div');
+                h.className = 'heart'; h.innerHTML = '❤️';
+                h.style.left = Math.random() * 100 + "vw";
+                document.body.appendChild(h);
+                setTimeout(() => h.remove(), 4000);
+            }
+        }, 500);
+    </script>
+</body>
+</html>
